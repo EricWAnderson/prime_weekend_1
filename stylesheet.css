@@ -1,0 +1,8 @@
+li {
+	display: inline;
+	padding: 14px 10px;
+}
+
+.employee {
+	border: 2px solid black;
+}

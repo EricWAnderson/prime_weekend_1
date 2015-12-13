@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src='jquery.min.js'></script>
+		<script type='text/javascript' src='app.js'></script>
+		<link rel='stylesheet' href='bootstrap.min.css'>
+		<link rel='stylesheet' href='stylesheet.css'>
+		<link 
+	</head>
+
+	<body>
+		<div class='container-fluid'>
+			<h1>Monthly Payroll Calculator</h1>
+		</div>
+		<div class='container-fluid'>
+			<form id='employeeinfo' class='form-horizontal'>
+				<div class="form-group">
+					<label for='employeeFirstName' class='col-sm-2 control-label'>Employee First Name</label>
+					<div class='col-sm-10'>
+						<input type='text' id='employeeFirstName' name='employeeFirstName' placeholder='First Name' autocomplete='off' />
+					</div>
+
+					<label for='employeeLastName' class='col-sm-2 control-label'>Employee Last Name</label>
+					<div class='col-sm-10'>
+						<input type='text' id='employeeLastName' name='employeeLastName' placeholder='Last Name' autocomplete='off' />
+					</div>
+
+					<label for='employeeNumber' class='col-sm-2 control-label'>Employee Number</label>
+					<div class='col-sm-10'>
+						<input type='number' id='employeeNumber' name='employeeNumber' placeholder='Employee Number' autocomplete='off' />
+					</div>
+
+					<label for='employeeJobTitle' class='col-sm-2 control-label'>Employee Job Title</label>
+					<div class='col-sm-10'>
+						<input type='text' id='employeeJobTitle' name='employeeJobTitle' placeholder='Job Title' autocomplete='off' />
+					</div>
+
+					<label for='employeeAnnualSalary' class='col-sm-2 control-label'>Employee Annual Salary</label>
+					<div class='col-sm-10'>
+						<input type='number' id='employeeAnnualSalary' name='employeeAnnualSalary' placeholder='Annual Salary' autocomplete='off' />
+					</div>
+
+					<div class='container-fluid'>
+						<button type='submit' value='Submit Employee' class='btn btn-primary btn-block'>Submit Employee</button>
+					</div>
+
+				</div>
+			</form>
+		</div>
+
+		<div class='container-fluid'>
+			<p>Monthly Payroll: $<span id='monthlyPayroll'>0</span><p>
+		</div>
+
+		<div id='container' class='container-fluid'>
+			
+		</div>
+			
+	</body>
+</html>
