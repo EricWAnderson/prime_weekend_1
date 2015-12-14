@@ -1,5 +1,6 @@
 var array = [];
 var monthlyPayroll = 0;
+var employeeUniqueId = 0;
 
 $(document).ready(function(){
 
@@ -23,6 +24,9 @@ function employeeSubmit() {
 	$("#employeeinfo").find("input[type=text]").val("");
 	$("#employeeinfo").find("input[type=number]").val("");
 
+	employeeUniqueId++;
+	values.employeeUniqueId = employeeUniqueId;
+
 	//push values object to array
 	array.push(values);
 	console.log(array);
@@ -39,12 +43,12 @@ function employeeDelete() {
 	event.preventDefault();
 
 	//find which employee ID is being deleted
-	var $id = $(this).parent().children("li").data("id");
+	var $id = $(this).parent().data("id");
 	console.log($id);
 	
 	//remove the employee from the array
 	for (var i = 0; i<array.length; i++) {
-		if (array[i].employeeNumber == $id) {
+		if (array[i].employeeUniqueId == $id) {
 			array.splice(i,1);
 			console.log(array);
 		}
@@ -52,6 +56,7 @@ function employeeDelete() {
 
 	//calculate the new monthly payroll
 	monthlyPayroll = calcMonthlyPayroll(array);
+	console.log(monthlyPayroll);
 
 	//remove the employee from the DOM, update monthly payroll
 	$(this).parent().remove();
@@ -77,9 +82,10 @@ function appendDom(object, variable){
 	//add employee info as unordered list, add delete button, update monthly payroll text
 	$("#container").append("<ul class=\"list-inline employee\"></ul>");
 	var $el = $("#container").children().last();
-	var deleteButton = "<button id='employeeDelete' type='submit' value='Delete Employee' class='btn btn-mini pull-right'>Delete Employee</button>";
+	$el.data("id", object.employeeUniqueId);
+	var deleteButton = "<button id='employeeDelete' type='submit' value='Delete Employee' class='btn btn-mini pull-right'>Delete</button>";
 
-	$el.append("<li data-id='" + object.employeeNumber + "''>#" + object.employeeNumber + ":</li>");
+	$el.append("<li>#" + object.employeeNumber + ":</li>");
 	$el.append("<li>" + object.employeeFirstName + "</li>");
 	$el.append("<li>" + object.employeeLastName + ",</li>");
 	$el.append("<li>" + object.employeeJobTitle + "</li>");
