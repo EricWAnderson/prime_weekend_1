@@ -3,6 +3,16 @@ li {
 	padding: 14px 10px;
 }
 
+p {
+	padding-top: 50px;
+}
+
+.row-fluid {
+	margin-top: 20px;
+}
+
 .employee {
 	border: 2px solid black;
+	padding: 5px;
+	background-color: #eee;
 }

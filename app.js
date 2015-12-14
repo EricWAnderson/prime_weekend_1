@@ -39,7 +39,8 @@ function employeeDelete() {
 	event.preventDefault();
 
 	//find which employee ID is being deleted
-	var $id = $(this).parent().children("li").first().data("id");
+	var $id = $(this).parent().children("li").data("id");
+	console.log($id);
 	
 	//remove the employee from the array
 	for (var i = 0; i<array.length; i++) {
